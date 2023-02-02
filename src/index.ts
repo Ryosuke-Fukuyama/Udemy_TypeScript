@@ -1,5 +1,5 @@
-let hello: string = 'hello';
-console.log(hello);
+// let hello: string = 'hello';
+// console.log(hello);
 
 let hasValue = true;
 let count = 10;
