@@ -23,7 +23,7 @@ Person.species = 'Homo sapiens';
 // quill.greeting();
 class Teacher extends Person {
     explainJob() {
-        console.log();
+        console.log(`I am teacher and I teach ${this.subject}.`);
     }
     get subject() {
         if (!this._subject) {
@@ -53,5 +53,5 @@ class Teacher extends Person {
 // console.log(Person.species)
 // console.log(Person.isAdult(18))
 const teacher = Teacher.getInstance();
-// teacher.greeting();
-console.log(teacher);
+teacher.greeting();
+// console.log(teacher);
