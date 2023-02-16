@@ -20,12 +20,55 @@ function Component(template: string, selector: string) {
   }
 }
 
-@Component('<h1>{{ name }}</h1>', '#app')
+function PropertyLogging(target: any, propertyKey: string) {
+  console.log('propertyLogging');
+  console.log(target);
+  console.log(propertyKey);
+}
+function MethodLogging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  console.log('methodLogging');
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
+}
+function enumerable(isEnumerable: boolean) {
+  return function (_target: any, _propertyKey: string, _descriptor: PropertyDescriptor) {
+    return {
+      enumerable: isEnumerable
+    }
+  }
+}
+function AccessorLogging(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  console.log('methodLogging');
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
+}
+function ParameterLogging(target: any, propertyKey: string, parameterIndex: number) {
+  console.log('methodLogging');
+  console.log(target);
+  console.log(propertyKey);
+  console.log(parameterIndex);
+}
+
 @Logging('Logging User')
+@Component('<h1>{{ name }}</h1>', '#app')
 class User {
+  @PropertyLogging
   name = 'Quill';
-  constructor(public age: number) {
+  constructor(private _age: number) {
     console.log('User was created!');
+  }
+  get age() {
+    return this._age;
+  }
+  set age(value) {
+    this._age = value;
+  }
+  @enumerable(false)
+  @MethodLogging
+  greeting(@ParameterLogging message: string) {
+    console.log(message);
   }
 }
 const user1 = new User(32);
