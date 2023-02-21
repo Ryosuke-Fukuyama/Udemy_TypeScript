@@ -1,7 +1,7 @@
-import { Foodsable } from "./interface.js";
+import * as Interfaces from "./interface.js";
 import { Food } from "./food.js";
 
-export class Foods implements Foodsable {
+export class Foods implements Interfaces.Foodsable {
   private static instance : Foods;
   elements = document.querySelectorAll<HTMLDivElement>('.food');
   private _activeElements: HTMLDivElement[] = [];

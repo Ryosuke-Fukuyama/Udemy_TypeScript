@@ -1,7 +1,7 @@
-import { Foodable } from "./interface.js";
+import * as Interfaces from "./interface.js";
 import { Score } from "./score.js";
 
-export class Food implements Foodable {
+export class Food implements Interfaces.Foodable {
   constructor(public element: HTMLDivElement) {
     element.addEventListener('click', this.clickEventHandler.bind(this));
   }
