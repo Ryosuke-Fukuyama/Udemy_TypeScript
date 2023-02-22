@@ -1,5 +1,5 @@
-import * as Interfaces from "./interface.js";
-import { Food } from "./food.js";
+import * as Interfaces from "./interface";
+import { Food } from "./food";
 
 export class Foods implements Interfaces.Foodsable {
   private static instance : Foods;

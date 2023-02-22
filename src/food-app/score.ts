@@ -1,5 +1,5 @@
-import * as Interfaces from "./interface.js";
-import { Foods } from "./foods.js";
+import * as Interfaces from "./interface";
+import { Foods } from "./foods";
 
 export class Score implements Interfaces.Scoreable {
   private static instance: Score;
