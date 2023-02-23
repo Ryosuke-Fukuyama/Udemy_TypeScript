@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "clean-webpack-plugin": "^4.0.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
@@ -21,6 +22,7 @@
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
     "ansi-styles": "^4.3.0",
+    "axios": "^1.3.4",
     "braces": "^3.0.2",
     "browserslist": "^4.21.5",
     "buffer-from": "^1.1.2",
